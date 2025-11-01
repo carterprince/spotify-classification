@@ -20,8 +20,8 @@ Members:
 In the `data/` directory:
 
 - `X_train.csv`
-- `X_test.csv`
 - `y_train.csv`
+- `X_test.csv`
 - `y_test.csv`
 
 These contain your preprocessed data. Train and test on these.
