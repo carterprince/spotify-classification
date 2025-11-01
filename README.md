@@ -11,7 +11,7 @@ A comparative analysis of six machine learning models for predicting the genre o
 | [K-Nearest Neighbors Classifier](https://scikit-learn.org/stable/modules/generated/sklearn.neighbors.KNeighborsClassifier.html) | Austin Bell |
 | [Gaussian Naive Bayes Classifier](https://scikit-learn.org/stable/modules/generated/sklearn.naive_bayes.GaussianNB.html) | |
 | Gradient Boosting Classifier | | feel free to use either XGBoost or LightGBM, I recommend XGBoost |
-| Multilayer Perceptron (Neural Net) Classifier | | use Pytorch |
+| Multilayer Perceptron (Neural Net) Classifier | | use PyTorch |
 
 Edit the above table (in this README) to claim your model. Or, put it in the proposal and I will add it for you.
 
