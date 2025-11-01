@@ -4,14 +4,14 @@ Term Project for Data Science II (Group 8)
 
 A comparative analysis of six machine learning models for predicting the genre of songs on Spotify based on their audio features and metadata.
 
-| Member | Model |
-| ------ | ----- |
-| Robera Abajobir | |
-| Sanghyun An | |
-| Austin Bell | [K-Nearest Neighbors Classifier](https://scikit-learn.org/stable/modules/generated/sklearn.neighbors.KNeighborsClassifier.html) |
-| Carter Prince |  |
-| Tyler Varma |  |
-| Anvita Yerramsetty | [Random Forest Classifier](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestClassifier.html) |
+| Model | Member |
+| ----- | ------ |
+| [Logistic Classifier](https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LogisticRegression.html) | |
+| [Random Forest Classifier](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestClassifier.html) | Anvita Yerramsetty |
+| [K-Nearest Neighbors Classifier](https://scikit-learn.org/stable/modules/generated/sklearn.neighbors.KNeighborsClassifier.html) | Austin Bell |
+| [Gaussian Naive Bayes Classifier](https://scikit-learn.org/stable/modules/generated/sklearn.naive_bayes.GaussianNB.html) | |
+| Gradient Boosting Classifier | |
+| Multilayer Perceptron (Neural Net) Classifier] | |
 
 Edit the above table (in this README) to claim your model. Or, change it in the proposal and I will add it for you.
 
