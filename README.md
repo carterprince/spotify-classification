@@ -84,7 +84,7 @@ Use this format for the JSON:
 }
 ```
 
-This ensures we have a consistent way to read the performance of each model and how each hyperparameter affected the results.
+This ensures that for each notebook we have a consistent, streamlined way to read the performance of each model and to see how each hyperparameter affected the results. This will be immensely useful for writing the final report.
 
 ## Requirements
 
