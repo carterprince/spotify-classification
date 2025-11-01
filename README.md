@@ -17,9 +17,14 @@ Members:
 
 **Files you need:**
 
-`X_train.csv`, `X_test.csv`, `y_train.csv`, and `y_test.csv` contain your preprocessed data. Train and test on these.
+- `X_train.csv`
+- `X_test.csv`
+- `y_train.csv`
+- `y_test.csv`
 
-You do not need to scale, clean, or split the data, this is already done for you.
+These contain your preprocessed data. Train and test on these.
+
+Note: You do not need to scale, clean, or split the data, this is already done for you.
 
 **Files you can ignore:**
 
@@ -35,7 +40,7 @@ Have your notebook write a single JSON file to the `output/` folder. You can cal
 
 This JSON file is the only actual output required from your code. This ensures that for each model we have a consistent, streamlined way to read its performance and to see how each hyperparameter affected its performance. This will be immensely useful for writing the final report.
 
-Use this format for the JSON:
+Use this format for the JSON (these are just example values):
 
 ```json
 {
