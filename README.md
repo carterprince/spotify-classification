@@ -15,6 +15,8 @@ Members:
 
 ## === Info for Group Members: ===
 
+**Template notebook here**: https://colab.research.google.com/drive/1xiy1I7ASKxMwgVXxQysEFoqKlwlB5Z1H?usp=sharing
+
 **Files you need:**
 
 In the `data/` directory:
