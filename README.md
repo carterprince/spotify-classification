@@ -19,6 +19,8 @@ Members:
 
 `X_train.csv`, `X_test.csv`, `y_train.csv`, and `y_test.csv` contain your preprocessed data. Train and test on these.
 
+You do not need to scale, clean, or split the data, this is already done for you.
+
 **Files you can ignore:**
 
 Please do not attempt to load or use `SpotifyFeatures.csv`, the data you need is in the above files.
