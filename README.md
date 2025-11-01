@@ -28,8 +28,6 @@ Note: You do not need to scale, clean, or split the data, this is already done f
 
 **Files you can ignore:**
 
-Please do not attempt to load or use `SpotifyFeatures.csv`, the data you need is in the above files.
-
 `metadata.json` maps integer labels to genre names and feature info. This file will be needed in the final analysis notebook, but each individual won't need to use it.
 
 `scaler.pkl` is saved "just in case" but again you shouldn't need it. It lets you reverse the scaling from the preprocessing script or scale new data the same way.
