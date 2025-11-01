@@ -17,7 +17,7 @@ Members:
 
 **Files you need:**
 
-In the `preprocessed_data/` directory:
+In the `data/` directory:
 
 - `X_train.csv`
 - `X_test.csv`
