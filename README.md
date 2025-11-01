@@ -13,6 +13,8 @@ A comparative analysis of six machine learning models for predicting the genre o
 | Tyler Varma |  |
 | Anvita Yerramsetty | Random Forest Classifier |
 
+Edit the above table (in this README) to claim your model. Or, change it in the proposal and I will add it for you.
+
 ## === Info for Group Members: ===
 
 **Template notebook here**: https://colab.research.google.com/drive/1xiy1I7ASKxMwgVXxQysEFoqKlwlB5Z1H?usp=sharing
