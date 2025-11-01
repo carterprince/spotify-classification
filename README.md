@@ -8,10 +8,10 @@ A comparative analysis of six machine learning models for predicting the genre o
 | ------ | ----- |
 | Robera Abajobir | |
 | Sanghyun An | |
-| Austin Bell | K-Nearest Neighbors Classifier |
+| Austin Bell | [K-Nearest Neighbors Classifier](https://scikit-learn.org/stable/modules/generated/sklearn.neighbors.KNeighborsClassifier.html) |
 | Carter Prince |  |
 | Tyler Varma |  |
-| Anvita Yerramsetty | Random Forest Classifier |
+| Anvita Yerramsetty | [Random Forest Classifier](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestClassifier.html) |
 
 Edit the above table (in this README) to claim your model. Or, change it in the proposal and I will add it for you.
 
