@@ -6,16 +6,16 @@ A comparative analysis of six machine learning models for predicting the genre o
 
 | Model | Member | Notes |
 | ----- | ------ | ----- |
-| [Logistic Classifier](https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LogisticRegression.html)  | | be sure to use `multi_class='ovr'` since there are many classes |
+| [Logistic Classifier](https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LogisticRegression.html)  | | use `multi_class='ovr'` since there are >2 classes |
 | [Random Forest Classifier](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestClassifier.html) | Anvita Yerramsetty |
 | [K-Nearest Neighbors Classifier](https://scikit-learn.org/stable/modules/generated/sklearn.neighbors.KNeighborsClassifier.html) | Austin Bell |
 | [Gaussian Naive Bayes Classifier](https://scikit-learn.org/stable/modules/generated/sklearn.naive_bayes.GaussianNB.html) | |
-| Gradient Boosting Classifier | | feel free to use XGBoost or LightGBM, whichever you prefer. I recommend XGBoost |
-| Multilayer Perceptron (Neural Net) Classifier | use Pytorch |
+| Gradient Boosting Classifier | | feel free to use either XGBoost or LightGBM, I recommend XGBoost |
+| Multilayer Perceptron (Neural Net) Classifier | | use Pytorch |
 
 Edit the above table (in this README) to claim your model. Or, put it in the proposal and I will add it for you.
 
-## === Info for Group Members: ===
+## Info for Group Members:
 
 **Template notebook here**: https://colab.research.google.com/drive/1xiy1I7ASKxMwgVXxQysEFoqKlwlB5Z1H?usp=sharing
 
