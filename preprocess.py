@@ -11,7 +11,7 @@ warnings.filterwarnings('ignore')
 # --- Configuration ---
 SAMPLE_SIZE = 2000
 RANDOM_STATE = 42
-OUTPUT_DIR = 'preprocessed_data'
+OUTPUT_DIR = 'data'
 
 def load_data(filepath='SpotifyFeatures.csv'):
     """Load the Spotify dataset"""
