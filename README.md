@@ -31,6 +31,8 @@ Please do not attempt to load or use `SpotifyFeatures.csv`, the data you need is
 
 Have your notebook write a single JSON file to the `output/` folder. You can call it whatever you want, but just going with the model name in snake case (e.g. `random_forest.json`) is probably best.
 
+This ensures that for each model we have a consistent, streamlined way to read its performance and to see how each hyperparameter affected its performance. This will be immensely useful for writing the final report.
+
 Use this format for the JSON:
 
 ```json
@@ -83,8 +85,6 @@ Use this format for the JSON:
   "total_test_time": 33.45
 }
 ```
-
-This ensures that for each notebook we have a consistent, streamlined way to read the performance of each model and to see how each hyperparameter affected the results. This will be immensely useful for writing the final report.
 
 ## Requirements
 
