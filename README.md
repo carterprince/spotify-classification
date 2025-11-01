@@ -13,7 +13,7 @@ A comparative analysis of six machine learning models for predicting the genre o
 | Gradient Boosting Classifier | |
 | Multilayer Perceptron (Neural Net) Classifier | |
 
-Edit the above table (in this README) to claim your model. Or, change it in the proposal and I will add it for you.
+Edit the above table (in this README) to claim your model. Or, put it in the proposal and I will add it for you.
 
 ## === Info for Group Members: ===
 
