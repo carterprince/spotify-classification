@@ -1,0 +1,53 @@
+{
+  "feature_names": [
+    "popularity",
+    "acousticness",
+    "danceability",
+    "duration_ms",
+    "energy",
+    "instrumentalness",
+    "liveness",
+    "loudness",
+    "speechiness",
+    "tempo",
+    "time_signature",
+    "valence",
+    "key_encoded",
+    "mode_encoded"
+  ],
+  "n_features": 14,
+  "n_train_samples": 37588,
+  "n_test_samples": 9397,
+  "n_genres": 24,
+  "genre_labels": {
+    "0": "Alternative",
+    "1": "Anime",
+    "2": "Blues",
+    "3": "Children's Music",
+    "4": "Classical",
+    "5": "Comedy",
+    "6": "Country",
+    "7": "Dance",
+    "8": "Electronic",
+    "9": "Folk",
+    "10": "Hip-Hop",
+    "11": "Indie",
+    "12": "Jazz",
+    "13": "Movie",
+    "14": "Opera",
+    "15": "Pop",
+    "16": "R&B",
+    "17": "Reggae",
+    "18": "Reggaeton",
+    "19": "Rock",
+    "20": "Ska",
+    "21": "Soul",
+    "22": "Soundtrack",
+    "23": "World"
+  },
+  "balancing_strategy": "Hybrid: Undersample majority classes to 2000, keep all samples for classes with <= 2000.",
+  "genres_discarded": [
+    "A Capella"
+  ],
+  "random_state": 42
+}

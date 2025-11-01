@@ -93,6 +93,10 @@ Use this format for the JSON (these are just example values):
 }
 ```
 
+Here's a performance baseline I got using a simple KNN model, which suggest there's strong signal present in the data:
+
+![](/knn_confusion_matrix.png)
+
 ## Requirements
 
 ## Run
