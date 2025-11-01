@@ -4,14 +4,14 @@ Term Project for Data Science II (Group 8)
 
 A comparative analysis of six machine learning models for predicting the genre of songs on Spotify based on their audio features and metadata.
 
-| Model | Member |
-| ----- | ------ |
-| [Logistic Classifier](https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LogisticRegression.html) | |
+| Model | Member | Notes |
+| ----- | ------ | ----- |
+| [Logistic Classifier](https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LogisticRegression.html)  | | be sure to use `multi_class='ovr'` since there are many classes |
 | [Random Forest Classifier](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestClassifier.html) | Anvita Yerramsetty |
 | [K-Nearest Neighbors Classifier](https://scikit-learn.org/stable/modules/generated/sklearn.neighbors.KNeighborsClassifier.html) | Austin Bell |
 | [Gaussian Naive Bayes Classifier](https://scikit-learn.org/stable/modules/generated/sklearn.naive_bayes.GaussianNB.html) | |
-| Gradient Boosting Classifier | |
-| Multilayer Perceptron (Neural Net) Classifier | |
+| Gradient Boosting Classifier | | feel free to use XGBoost or LightGBM, whichever you prefer. I recommend XGBoost |
+| Multilayer Perceptron (Neural Net) Classifier | use Pytorch |
 
 Edit the above table (in this README) to claim your model. Or, put it in the proposal and I will add it for you.
 
