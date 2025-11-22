@@ -10,7 +10,7 @@ A comparative analysis of six machine learning models for predicting the genre o
 | [Random Forest Classifier](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestClassifier.html) | Anvita Yerramsetty |
 | [K-Nearest Neighbors Classifier](https://scikit-learn.org/stable/modules/generated/sklearn.neighbors.KNeighborsClassifier.html) | Austin Bell |
 | [Gaussian Naive Bayes Classifier](https://scikit-learn.org/stable/modules/generated/sklearn.naive_bayes.GaussianNB.html) | Sanghyun An |
-| Gradient Boosting Classifier | | feel free to use either XGBoost or LightGBM, I recommend XGBoost |
+| Gradient Boosting Classifier | Robera Abajobir | feel free to use either XGBoost or LightGBM, I recommend XGBoost |
 | Multilayer Perceptron (Neural Net) Classifier | Carter Prince | use PyTorch |
 
 Edit the above table (in this README) to claim your model. Or, put it in the proposal and I will add it for you.
