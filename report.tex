@@ -93,17 +93,17 @@ To address class imbalance, a hybrid resampling strategy was applied. Majority c
 Exploratory Data Analysis (EDA) was conducted to assess feature relationships and class separability.
 
 \subsection{Correlation Analysis}
-The Pearson correlation matrix (Figure \ref{fig:corr}) indicates multicollinearity among specific audio features. A correlation coefficient of $0.82$ was observed between \textbf{Energy} and \textbf{Loudness}, while \textbf{Acousticness} and \textbf{Energy} exhibited a negative correlation of $-0.74$. These correlations suggest that models assuming feature independence, such as Naive Bayes, may experience performance degradation.
+The Pearson correlation matrix (Figure \ref{fig:corr}) indicates multicollinearity among specific audio features. A correlation coefficient of $0.82$ was observed between \texttt{energy} and \texttt{loudness}, while \texttt{acousticness} and \texttt{energy} exhibited a negative correlation of $-0.74$. These correlations suggest that models assuming feature independence, such as Naive Bayes, may experience performance degradation.
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.7\textwidth]{fig2_correlation.png}
-    \caption{Feature Correlation Matrix indicating strong relationships between Energy, Loudness, and Acousticness.}
+    \caption{Feature Correlation Matrix indicating strong relationships between \texttt{energy}, \texttt{loudness}, and \texttt{acousticness}.}
     \label{fig:corr}
 \end{figure}
 
 \subsection{Feature Separability}
-Boxplot analysis (Figure \ref{fig:box}) demonstrates that \texttt{Acousticness} effectively discriminates Classical music from other genres, while \texttt{Energy} separates Electronic music from Classical.
+Boxplot analysis (Figure \ref{fig:box}) demonstrates that \texttt{acousticness} effectively discriminates Classical music from other genres, while \texttt{energy} separates Electronic music from Classical.
 
 \begin{figure}[H]
     \centering
@@ -192,7 +192,7 @@ Given 24 distinct classes, a random classifier would achieve an accuracy of appr
     \item \textbf{Tree Ensembles Dominate:} XGBoost and Random Forest outperformed linear and distance-based models by nearly 10\%. This indicates that genre boundaries are highly non-linear and ragged, requiring models that can partition the feature space into complex regions.
     \item \textbf{Neural Networks:} The MLP performed well (51.07\%), surpassing linear models, but did not exceed the performance of tree-based ensembles on this tabular dataset.
     \item \textbf{Linear Limitations:} Logistic Regression (44.84\%) plateaued significantly lower than the top performers, suggesting that the relationships between audio features and genre are not linearly separable.
-    \item \textbf{Impact of Correlation:} Gaussian Naive Bayes yielded the lowest accuracy (36.50\%). This confirms the hypothesis derived from the EDA: the strong correlations between features (e.g., Energy and Loudness) violate the independence assumption of Naive Bayes, degrading its performance.
+    \item \textbf{Impact of Correlation:} Gaussian Naive Bayes yielded the lowest accuracy (36.50\%). This confirms the hypothesis derived from the EDA: the strong correlations between features (e.g., \texttt{energy} and \texttt{loudness}) violate the independence assumption of Naive Bayes, degrading its performance.
 \end{itemize}
 
 \section{Recommendations of Study}
