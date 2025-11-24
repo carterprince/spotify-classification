@@ -115,6 +115,20 @@ Boxplot analysis (Figure \ref{fig:box}) demonstrates that \texttt{acousticness} 
     \label{fig:box}
 \end{figure}
 
+\section{Feature Selection}
+Feature selection was performed in two stages: manual removal of non-predictive identifiers and algorithmic selection via model regularization.
+
+\subsection{Removal of Identifiers}
+The raw dataset contained metadata fields including \texttt{artist\_name}, \texttt{track\_name}, and \texttt{track\_id}. While these fields are highly predictive of genre (e.g., a specific artist usually produces one genre), they do not generalize to unseen artists or new tracks. To ensure the model learned acoustic characteristics rather than memorizing specific catalog entries, these high-cardinality identifiers were removed prior to training.
+
+\subsection{Retention of Correlated Features}
+As noted in the Visual Examination, \texttt{energy} and \texttt{loudness} exhibited high correlation ($r=0.82$). Standard procedure in linear modeling often involves removing one of these to reduce multicollinearity. However, we chose to retain both for the following reasons:
+\begin{itemize}
+    \item \textbf{Tree-Based Robustness:} Our primary models (XGBoost, Random Forest) utilize embedded feature selection. They inherently select the most discriminative feature at each split, rendering manual removal unnecessary.
+    \item \textbf{Interaction Effects:} Deep learning models (MLP) can often exploit subtle differences between correlated features (e.g., a track that is loud but low energy might indicate a specific sub-genre like drone metal) that would be lost if one feature were dropped.
+\end{itemize}
+Consequently, the final feature set consisted of 14 variables: 11 audio metrics and 3 structural/metadata features.
+
 \section{Modeling Techniques Chosen}
 Six modeling techniques were selected to evaluate a range of mathematical approaches to the classification problem.
 
@@ -204,7 +218,7 @@ Based on the analysis, the following recommendations are proposed for future res
 \begin{enumerate}
     \item \textbf{Raw Audio Processing:} To exceed the observed accuracy ceiling of $\approx$55\%, future iterations should incorporate Convolutional Neural Networks (CNNs) applied to Mel-Spectrograms derived from raw audio, rather than relying solely on pre-calculated summary statistics.
     \item \textbf{Hierarchical Classification:} Given the taxonomical nature of music (e.g., ``Rock'' encompasses ``Alternative''), a hierarchical model that predicts the super-genre before refining the specific sub-genre could improve performance.
-    \item \textbf{Dimensionality Reduction:} For distance-based models such as KNN, applying Principal Component Analysis (PCA) or manually removing features with low separability (such as \texttt{key} and \texttt{mode}) may reduce noise and improve distance metrics.
+    \item \textbf{Dimensionality Reduction:} While tree-based models handled the full feature set well, distance-based models like KNN suffered from high dimensionality. Future studies should apply Principal Component Analysis (PCA) or manually remove features with low separability (such as \texttt{key} and \texttt{mode}) to reduce noise and computational cost.
 \end{enumerate}
 
 \end{document}
