@@ -55,6 +55,9 @@ Music genre classification is a fundamental task in Music Information Retrieval 
 
 The classification task presents challenges due to the subjective nature of musical genres (e.g., the fluid boundary between ``Indie'' and ``Alternative'') and the difficulty of representing temporal audio signals as static numerical features. The objective of this project is to develop a multi-class classification model capable of predicting one of 24 distinct genres given a set of 14 high-level audio features (e.g., danceability, energy, tempo) and metadata.
 
+\subsection{Project Organization}
+To ensure a rigorous and fair comparison, the project adopted a modular collaborative structure. A centralized preprocessing pipeline was developed to generate a single, version-controlled dataset used by all team members. Each of the six group members took ownership of one specific modeling technique, performing independent hyperparameter tuning. Results were exported to a standardized JSON schema, allowing for the programmatic aggregation of metrics and the generation of comparative visualizations presented in this report.
+
 \section{Collection and Description of Datasets}
 The dataset utilized is \texttt{SpotifyFeatures.csv}, containing tracks retrieved via the Spotify Web API.
 
