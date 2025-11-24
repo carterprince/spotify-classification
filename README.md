@@ -1,108 +1,88 @@
-# spotify-classification
-
-Term Project for Data Science II (Group 8)
+# Spotify Genre Classification
+**Term Project for Data Science II (Group 8)**
 
 A comparative analysis of six machine learning models for predicting the genre of songs on Spotify based on their audio features and metadata.
 
-| Model | Member | Notes |
-| ----- | ------ | ----- |
-| [Logistic Classifier](https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LogisticRegression.html)  | Tyler Varma | |
-| [Random Forest Classifier](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestClassifier.html) | Anvita Yerramsetty |
-| [K-Nearest Neighbors Classifier](https://scikit-learn.org/stable/modules/generated/sklearn.neighbors.KNeighborsClassifier.html) | Austin Bell |
-| [Gaussian Naive Bayes Classifier](https://scikit-learn.org/stable/modules/generated/sklearn.naive_bayes.GaussianNB.html) | Sanghyun An |
-| Gradient Boosting Classifier | Robera Abajobir | feel free to use either XGBoost or LightGBM, I recommend XGBoost |
-| Multilayer Perceptron (Neural Net) Classifier | Carter Prince | use PyTorch |
+## Group Members
+*   Anvita Yerramsetty
+*   Austin Bell
+*   Carter Prince
+*   Robera Abajobir
+*   Sanghyun An
+*   Tyler Varma
 
-Edit the above table (in this README) to claim your model. Or, put it in the proposal and I will add it for you.
+## Project Overview
+This project aims to classify music tracks into 24 distinct genres using 14 audio features extracted from the Spotify API. We implemented a complete data science pipeline including data cleaning, hybrid balancing, feature scaling, hyperparameter tuning, and comparative analysis.
 
-## Info for Group Members:
+The models evaluated are:
+1.  **Logistic Regression**
+2.  **K-Nearest Neighbors (KNN)**
+3.  **Gaussian Naive Bayes**
+4.  **Random Forest Classifier**
+5.  **Gradient Boosting (XGBoost)**
+6.  **Multilayer Perceptron (Neural Network)**
 
-**Template notebook here**: https://colab.research.google.com/drive/1xiy1I7ASKxMwgVXxQysEFoqKlwlB5Z1H?usp=sharing
+## Directory Structure
 
-**Files you need:**
-
-In the `data/` directory:
-
-- `X_train.csv`
-- `y_train.csv`
-- `X_test.csv`
-- `y_test.csv`
-
-These contain your preprocessed data. Train and test on these.
-
-Note: You do not need to scale, clean, or split the data, this is already done for you.
-
-**Files you can ignore:**
-
-`metadata.json` maps integer labels to genre names and feature info. This file will be needed in the final analysis notebook, but each individual won't need to use it.
-
-`scaler.pkl` is saved "just in case" but again you shouldn't need it. It lets you reverse the scaling from the preprocessing script or scale new data the same way.
-
-**Deliverables for the final analysis notebook:**
-
-Have your notebook write a single JSON file to the `output/` folder. You can call it whatever you want, but just going with the model name in snake case (e.g. `random_forest.json`) is probably best.
-
-This JSON file is the only actual output required from your code. This ensures that for each model we have a consistent, streamlined way to read its performance and to see how each hyperparameter affected its performance. This will be immensely useful for writing the final report.
-
-Use this format for the JSON (these are just example values):
-
-```json
-{
-  "model_name": "Random Forest",
-  "person_name": "Anvita Yerramsetty",
-  "best_hyperparameters": {
-    "n_estimators": 200,
-    "max_depth": 25,
-    "min_samples_split": 5,
-    "min_samples_leaf": 2
-    ...
-  },
-  "best_confusion_matrix": [
-    [145, 12, 3, 8, 2, ...],
-    [10, 167, 5, 4, 1, ...],
-    [5, 8, 152, 15, 3, ...],
-    ...
-  ],
-  "trials": [
-    {
-      "hyperparameters": {
-        "n_estimators": 100,
-        "max_depth": 20,
-        "min_samples_split": 2,
-        "min_samples_leaf": 1
-      },
-      "confusion_matrix": [
-        [142, 15, 4, 9, 3, ...],
-        [12, 162, 7, 5, 2, ...],
-        ...
-      ]
-    },
-    {
-      "hyperparameters": {
-        "n_estimators": 200,
-        "max_depth": 25,
-        "min_samples_split": 5,
-        "min_samples_leaf": 2
-      },
-      "confusion_matrix": [
-        [145, 12, 3, 8, 2, ...],
-        [10, 167, 5, 4, 1, ...],
-        ...
-      ]
-    },
-    ...
-  ],
-  "total_train_time": 127.45,
-  "total_test_time": 33.45
-}
+```text
+.
+├── data/                   # Contains processed CSV files and metadata
+├── output/                 # JSON files containing results from each model run
+├── report_images/          # Generated plots used in the LaTeX report
+├── preprocess.py           # Script to clean, balance, and scale the raw data
+├── analyze.py              # Script to generate the results table and leaderboard
+├── generate_report_figures.py  # Script to create all visualizations for the report
+├── report.tex              # Final LaTeX report source code
+├── requirements.txt        # Python dependencies
+└── [model_scripts].py      # Individual training scripts (e.g., xgboost.ipynb, mlp.py)
 ```
 
-## Preliminary Test
+## How to Reproduce Results
 
-Here's a performance baseline I got using a simple KNN model, which suggests there's strong signal present in the data:
+### 1. Prerequisites
+Ensure you have Python 3.8+ installed. Install the required dependencies:
 
-![](/knn_confusion_matrix.png)
+```bash
+pip install pandas numpy scikit-learn xgboost torch matplotlib seaborn
+```
 
-## Requirements
+### 2. Data Preprocessing
+The raw data (`SpotifyFeatures.csv`) is processed into training and testing sets. This script handles cleaning, encoding, scaling, and splitting.
 
-## Run
+```bash
+python preprocess.py
+```
+*Output: Generates `X_train.csv`, `y_train.csv`, `X_test.csv`, `y_test.csv` in the `data/` folder.*
+
+### 3. Model Training
+Each model has its own script or notebook. Running these will perform hyperparameter tuning and save the results to a standardized JSON file in the `output/` directory.
+
+*Example:*
+```bash
+python mlp.py
+python gaussian_nb.py
+# ... etc
+```
+
+*Note: The `output/` directory already contains the results from our final runs, so re-training is optional.*
+
+### 4. Analysis & Visualization
+To generate the comparative leaderboard and the figures used in the report:
+
+```bash
+# Generates the leaderboard and efficiency plots
+python analyze.py
+
+# Generates specific figures (Class Balance, Correlation, Hyperparameter plots)
+python generate_report_figures.py
+```
+
+### 5. Report Generation
+The final report is written in LaTeX. You can compile it using `pdflatex`:
+
+```bash
+pdflatex report.tex
+```
+
+## Key Results
+Our best performing model was **XGBoost**, achieving an accuracy of **54.37%**. This significantly outperforms the random baseline of 4.1%. The analysis suggests that while audio summary features contain predictive signal, the subjective nature of genre boundaries limits the maximum achievable accuracy for tabular models.

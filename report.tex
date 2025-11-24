@@ -55,9 +55,6 @@ Music genre classification is a fundamental task in Music Information Retrieval 
 
 The classification task presents challenges due to the subjective nature of musical genres (e.g., the fluid boundary between ``Indie'' and ``Alternative'') and the difficulty of representing temporal audio signals as static numerical features. The objective of this project is to develop a multi-class classification model capable of predicting one of 24 distinct genres given a set of 14 high-level audio features (e.g., danceability, energy, tempo) and metadata.
 
-\subsection{Project Organization}
-To ensure a rigorous and fair comparison, the project adopted a modular collaborative structure. A centralized preprocessing pipeline was developed to generate a single, version-controlled dataset used by all team members. Each of the six group members took ownership of one specific modeling technique, performing independent hyperparameter tuning. Results were exported to a standardized JSON schema, allowing for the programmatic aggregation of metrics and the generation of comparative visualizations presented in this report.
-
 \section{Collection and Description of Datasets}
 The dataset utilized is \texttt{SpotifyFeatures.csv}, containing tracks retrieved via the Spotify Web API.
 
@@ -220,8 +217,13 @@ Based on the analysis, the following recommendations are proposed for future res
 
 \begin{enumerate}
     \item \textbf{Raw Audio Processing:} To exceed the observed accuracy ceiling of $\approx$55\%, future iterations should incorporate Convolutional Neural Networks (CNNs) applied to Mel-Spectrograms derived from raw audio, rather than relying solely on pre-calculated summary statistics.
-    \item \textbf{Hierarchical Classification:} Given the taxonomical nature of music (e.g., ``Rock'' encompasses ``Alternative''), a hierarchical model that predicts the super-genre before refining the specific sub-genre could improve performance.
+    \item \textbf{Hierarchical Classification:} Given the taxonomical nature of music (e.g., ``Rock'' encompasses ``J-Rock''), a hierarchical model that predicts the super-genre before refining the specific sub-genre could improve performance.
     \item \textbf{Dimensionality Reduction:} For distance-based models such as KNN, applying Principal Component Analysis (PCA) or manually removing features with low separability (such as \texttt{key} and \texttt{mode}) may reduce noise and improve distance metrics.
 \end{enumerate}
+
+\section{Code Availability}
+The complete source code, data preprocessing scripts, and analysis notebooks used in this project are available in the following GitHub repository:
+
+\url{https://github.com/carterprince/spotify-classification}
 
 \end{document}
