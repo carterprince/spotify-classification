@@ -74,7 +74,7 @@ To generate the comparative leaderboard and the figures used in the report:
 python analyze.py
 
 # Generates specific figures (Class Balance, Correlation, Hyperparameter plots)
-python generate_report_figures.py
+python generate_figures.py
 ```
 
 ### 5. Report Generation
