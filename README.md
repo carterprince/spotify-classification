@@ -76,13 +76,3 @@ python analyze.py
 # Generates specific figures (Class Balance, Correlation, Hyperparameter plots)
 python generate_figures.py
 ```
-
-### 5. Report Generation
-The final report is written in LaTeX. You can compile it using `pdflatex`:
-
-```bash
-pdflatex report.tex
-```
-
-## Key Results
-Our best performing model was **XGBoost**, achieving an accuracy of **54.37%**. This significantly outperforms the random baseline of 4.1%. The analysis suggests that while audio summary features contain predictive signal, the subjective nature of genre boundaries limits the maximum achievable accuracy for tabular models.
