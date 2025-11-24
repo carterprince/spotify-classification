@@ -187,20 +187,12 @@ Model performance was evaluated on the held-out test set ($N=9,397$). Figure \re
 \subsection{Predictive Power vs. Random Baseline}
 Given 24 distinct classes, a random classifier would achieve an accuracy of approximately 4.1\%. The XGBoost model achieved an accuracy of 54.37\%. This substantial increase over the baseline confirms that the selected audio features contain significant predictive signal regarding musical genre, despite the subjective overlaps between classes.
 
-\subsection{Computational Efficiency}
-Inference speed is a critical factor for deployment. Figure \ref{fig:efficiency} plots Accuracy against Test Time (Log Scale). 
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.8\textwidth]{fig5_efficiency.png}
-    \caption{Efficiency Frontier: Accuracy vs. Prediction Speed.}
-    \label{fig:efficiency}
-\end{figure}
-
+\subsection{Model Comparison}
 \begin{itemize}
-    \item \textbf{XGBoost} demonstrated the most favorable trade-off, providing the highest accuracy with low inference latency.
-    \item \textbf{KNN} exhibited poor scalability. While its accuracy was comparable to Logistic Regression, the computational cost of calculating distances in high-dimensional space resulted in significantly slower inference times.
-    \item \textbf{Gaussian NB} was the fastest model but yielded the lowest accuracy, likely due to the violation of the feature independence assumption.
+    \item \textbf{Tree Ensembles Dominate:} XGBoost and Random Forest outperformed linear and distance-based models by nearly 10\%. This indicates that genre boundaries are highly non-linear and ragged, requiring models that can partition the feature space into complex regions.
+    \item \textbf{Neural Networks:} The MLP performed well (51.07\%), surpassing linear models, but did not exceed the performance of tree-based ensembles on this tabular dataset.
+    \item \textbf{Linear Limitations:} Logistic Regression (44.84\%) plateaued significantly lower than the top performers, suggesting that the relationships between audio features and genre are not linearly separable.
+    \item \textbf{Impact of Correlation:} Gaussian Naive Bayes yielded the lowest accuracy (36.50\%). This confirms the hypothesis derived from the EDA: the strong correlations between features (e.g., Energy and Loudness) violate the independence assumption of Naive Bayes, degrading its performance.
 \end{itemize}
 
 \section{Recommendations of Study}
@@ -209,7 +201,7 @@ Based on the analysis, the following recommendations are proposed for future res
 \begin{enumerate}
     \item \textbf{Raw Audio Processing:} To exceed the observed accuracy ceiling of $\approx$55\%, future iterations should incorporate Convolutional Neural Networks (CNNs) applied to Mel-Spectrograms derived from raw audio, rather than relying solely on pre-calculated summary statistics.
     \item \textbf{Hierarchical Classification:} Given the taxonomical nature of music (e.g., "Rock" encompasses "Alternative"), a hierarchical model that predicts the super-genre before refining the specific sub-genre could improve performance.
-    \item \textbf{Dimensionality Reduction:} For distance-based models such as KNN, applying Principal Component Analysis (PCA) or manually removing features with low separability (such as \texttt{key} and \texttt{mode}) may reduce noise and computational cost.
+    \item \textbf{Dimensionality Reduction:} For distance-based models such as KNN, applying Principal Component Analysis (PCA) or manually removing features with low separability (such as \texttt{key} and \texttt{mode}) may reduce noise and improve distance metrics.
 \end{enumerate}
 
 \end{document}
