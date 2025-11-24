@@ -53,7 +53,7 @@ This study evaluates the performance of six distinct machine learning algorithms
 \section{Problem Statement}
 Music genre classification is a fundamental task in Music Information Retrieval (MIR), essential for the functionality of streaming platforms such as Spotify and Apple Music. Accurate classification supports recommendation systems, playlist generation, and user personalization.
 
-The classification task presents challenges due to the subjective nature of musical genres and the difficulty of representing temporal audio signals as static numerical features. The objective of this study is to develop a multi-class classification model capable of predicting one of 24 distinct genres given a set of 14 high-level audio features (e.g., danceability, energy, tempo) and metadata.
+The classification task presents challenges due to the subjective nature of musical genres (e.g., the fluid boundary between ``Indie'' and ``Alternative'') and the difficulty of representing temporal audio signals as static numerical features. The objective of this study is to develop a multi-class classification model capable of predicting one of 24 distinct genres given a set of 14 high-level audio features (e.g., danceability, energy, tempo) and metadata.
 
 \section{Collection and Description of Datasets}
 The dataset utilized is \texttt{SpotifyFeatures.csv}, containing tracks retrieved via the Spotify Web API.
@@ -63,18 +63,21 @@ The dataset utilized is \texttt{SpotifyFeatures.csv}, containing tracks retrieve
     \item \textbf{Total Samples:} 46,985 (post-cleaning).
     \item \textbf{Classes:} 24 unique genres, including \textit{Alternative, Anime, Classical, Country, Electronic, Hip-Hop, Jazz, Pop, Rap, Reggaeton, Rock,} and others.
     \item \textbf{Input Features:} 14 total features.
+    % Using raggedright to prevent text overflow with texttt
+    {\raggedright
     \begin{itemize}
         \item \textbf{Audio Metrics (Continuous):} \texttt{acousticness}, \texttt{danceability}, \texttt{energy}, \texttt{instrumentalness}, \texttt{liveness}, \texttt{loudness}, \texttt{speechiness}, \texttt{tempo}, \texttt{valence}.
         \item \textbf{Metadata (Continuous):} \texttt{popularity}, \texttt{duration\_ms}.
         \item \textbf{Musical Structure (Categorical):} \texttt{time\_signature}, \texttt{key}, \texttt{mode}.
     \end{itemize}
+    }
 \end{itemize}
 
 \section{Data Preprocessing Techniques Applied}
 A standardized preprocessing pipeline was implemented using Python to ensure data quality and consistent evaluation.
 
 \subsection{Data Cleaning and Engineering}
-Initial inspection revealed tracks associated with multiple genres. To establish a single-label classification problem, tracks with duplicate IDs across different genre labels were removed. Additionally, the genre "Rap" was merged into "Hip-Hop" due to high similarity in feature space, and "A Capella" was excluded due to insufficient sample size.
+Initial inspection revealed tracks associated with multiple genres. To establish a single-label classification problem, tracks with duplicate IDs across different genre labels were removed. Additionally, the genre ``Rap'' was merged into ``Hip-Hop'' due to high similarity in feature space, and ``A Capella'' was excluded due to insufficient sample size.
 
 \subsection{Hybrid Balancing Strategy}
 To address class imbalance, a hybrid resampling strategy was applied. Majority classes were undersampled to a maximum of 2,000 samples, while minority classes were retained in their entirety. As illustrated in Figure \ref{fig:balance}, this approach reduced bias toward dominant classes while preserving information from minority classes.
@@ -200,7 +203,7 @@ Based on the analysis, the following recommendations are proposed for future res
 
 \begin{enumerate}
     \item \textbf{Raw Audio Processing:} To exceed the observed accuracy ceiling of $\approx$55\%, future iterations should incorporate Convolutional Neural Networks (CNNs) applied to Mel-Spectrograms derived from raw audio, rather than relying solely on pre-calculated summary statistics.
-    \item \textbf{Hierarchical Classification:} Given the taxonomical nature of music (e.g., "Rock" encompasses "Alternative"), a hierarchical model that predicts the super-genre before refining the specific sub-genre could improve performance.
+    \item \textbf{Hierarchical Classification:} Given the taxonomical nature of music (e.g., ``Rock'' encompasses ``Alternative''), a hierarchical model that predicts the super-genre before refining the specific sub-genre could improve performance.
     \item \textbf{Dimensionality Reduction:} For distance-based models such as KNN, applying Principal Component Analysis (PCA) or manually removing features with low separability (such as \texttt{key} and \texttt{mode}) may reduce noise and improve distance metrics.
 \end{enumerate}
 
