@@ -28,11 +28,11 @@ The models evaluated are:
 .
 ├── data/                   # Contains processed CSV files and metadata
 ├── output/                 # JSON files containing results from each model run
-├── report_images/          # Generated plots used in the LaTeX report
 ├── preprocess.py           # Script to clean, balance, and scale the raw data
 ├── analyze.py              # Script to generate the results table and leaderboard
-├── generate_report_figures.py  # Script to create all visualizations for the report
+├── generate_figures.py     # Script to create all visualizations for the report
 ├── report.tex              # Final LaTeX report source code
+├── report.pdf              # Final report PDF
 ├── requirements.txt        # Python dependencies
 └── [model_scripts].py      # Individual training scripts (e.g., xgboost.ipynb, mlp.py)
 ```
