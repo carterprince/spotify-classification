@@ -143,7 +143,7 @@ Six modeling techniques were selected to evaluate a range of mathematical approa
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.6\textwidth]{fig8_knn_k.png}
+    \includegraphics[width=0.6\textwidth]{slide8_knn_distance.png}
     \caption{KNN Accuracy vs. Number of Neighbors (k).}
     \label{fig:knn}
 \end{figure}
@@ -156,7 +156,7 @@ Six modeling techniques were selected to evaluate a range of mathematical approa
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.6\textwidth]{fig7_rf_estimators.png}
+    \includegraphics[width=0.6\textwidth]{slide10_rf_complexity.png}
     \caption{Random Forest Accuracy vs. Number of Trees.}
     \label{fig:rf}
 \end{figure}
@@ -166,8 +166,15 @@ Six modeling techniques were selected to evaluate a range of mathematical approa
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.6\textwidth]{fig6_xgb_lr.png}
+    \includegraphics[width=0.6\textwidth]{slide11_xgb_learning_rate.png}
     \caption{XGBoost Accuracy vs. Learning Rate.}
+    \label{fig:xgb}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{slide11_xgb_iterations.png}
+    \caption{XGBoost Accuracy vs. Iterations.}
     \label{fig:xgb}
 \end{figure}
 
@@ -202,6 +209,13 @@ Model performance was evaluated on the held-out test set ($N=9,397$). Figure \re
 \end{tabular}
 \end{table}
 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{best_xgboost_cm.png}
+    \caption{Confusion Matrix for the best XGB trial.}
+    \label{fig:corr}
+\end{figure}
+
 \section{Interpretation of Results}
 
 \subsection{Predictive Power vs. Random Baseline}
@@ -219,7 +233,7 @@ Given 24 distinct classes, a random classifier would achieve an accuracy of appr
 Based on the analysis, the following recommendations are proposed for future research:
 
 \begin{enumerate}
-    \item \textbf{Raw Audio Processing:} To exceed the observed accuracy ceiling of $\approx$55\%, future iterations should incorporate Convolutional Neural Networks (CNNs) applied to Mel-Spectrograms derived from raw audio, rather than relying solely on pre-calculated summary statistics.
+    \item \textbf{Richer Data:} To exceed the observed accuracy ceiling of $\approx$55\%, future iterations should incorporate Convolutional Neural Networks (CNNs) on raw audio or perhaps a pretrained audio embedding model rather than relying solely on pre-calculated summary statistics.
     \item \textbf{Hierarchical Classification:} Given the taxonomical nature of music (e.g., ``Rock'' encompasses ``J-Rock''), a hierarchical model that predicts the super-genre before refining the specific sub-genre could improve performance.
     \item \textbf{Dimensionality Reduction:} For distance-based models such as KNN, applying Principal Component Analysis (PCA) or manually removing features with low separability (such as \texttt{key} and \texttt{mode}) may reduce noise and improve distance metrics.
 \end{enumerate}
