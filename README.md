@@ -1,7 +1,7 @@
 # Spotify Genre Classification
 **Term Project for Data Science II (Group 8)**
 
-(Note for TAs: report is in [report.pdf](https://raw.githubusercontent.com/carterprince/spotify-classification/refs/heads/master/report.pdf))
+[**📄 Click here to view the Full Project Report**](https://raw.githubusercontent.com/carterprince/spotify-classification/refs/heads/master/report.pdf)
 
 A comparative analysis of six machine learning models for predicting the genre of songs on Spotify based on their audio features and metadata.
 
